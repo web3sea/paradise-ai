@@ -40,7 +40,7 @@ const HomePage = () => {
               </Button>
               <Button variant="hero" size="xl" asChild>
                 <a 
-                  href="https://lu.ma" 
+                  href="https://lu.ma/neydsdl3" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
@@ -222,7 +222,7 @@ const HomePage = () => {
               </Button>
               <Button variant="hero" size="xl" asChild>
                 <a 
-                  href="https://lu.ma" 
+                  href="https://lu.ma/neydsdl3" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
