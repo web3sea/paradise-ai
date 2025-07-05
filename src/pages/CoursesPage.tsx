@@ -9,7 +9,6 @@ import {
   Search, 
   Filter,
   Clock,
-  Users,
   PlayCircle
 } from "lucide-react";
 
@@ -21,7 +20,6 @@ const mockCourses = [
     description: "Learn to build intelligent systems that automate your business processes",
     level: "Beginner",
     duration: "4 hours",
-    students: 1250,
     instructor: "Noah",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400",
     category: "Fundamentals"
@@ -32,7 +30,6 @@ const mockCourses = [
     description: "Create intelligent assistants tailored to your specific business needs",
     level: "Intermediate",
     duration: "6 hours",
-    students: 850,
     instructor: "Noah",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400",
     category: "Development"
@@ -43,7 +40,6 @@ const mockCourses = [
     description: "Master the art of creating high-quality content using AI tools",
     level: "Beginner",
     duration: "3 hours",
-    students: 2100,
     instructor: "Noah",
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400",
     category: "Content"
@@ -54,7 +50,6 @@ const mockCourses = [
     description: "Transform your operations with intelligent automation strategies",
     level: "Advanced",
     duration: "8 hours",
-    students: 425,
     instructor: "Noah",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400",
     category: "Business"
@@ -160,10 +155,6 @@ const CoursesPage = () => {
                   <div className="flex items-center gap-1">
                     <Clock className="h-4 w-4" />
                     {course.duration}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Users className="h-4 w-4" />
-                    {course.students.toLocaleString()}
                   </div>
                 </div>
                 

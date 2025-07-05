@@ -213,7 +213,7 @@ const HomePage = () => {
               Ready to Start Your Journey?
             </h2>
             <p className="text-xl text-white/90">
-              Join 7,000+ TikTok followers who are already part of this movement. 
+              Join our growing community of digital nomads who are already part of this movement. 
               Your freedom lifestyle awaits.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

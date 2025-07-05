@@ -34,22 +34,22 @@ const CommunityPage = () => {
           <Card className="bg-gradient-card text-center">
             <CardContent className="p-6">
               <Users className="h-8 w-8 text-primary mx-auto mb-2" />
-              <div className="text-2xl font-bold text-foreground">5,000+</div>
-              <div className="text-sm text-muted-foreground">Active Members</div>
+              <div className="text-2xl font-bold text-foreground">Growing</div>
+              <div className="text-sm text-muted-foreground">Active Community</div>
             </CardContent>
           </Card>
           <Card className="bg-gradient-card text-center">
             <CardContent className="p-6">
               <MessageSquare className="h-8 w-8 text-primary mx-auto mb-2" />
-              <div className="text-2xl font-bold text-foreground">15,000+</div>
+              <div className="text-2xl font-bold text-foreground">Daily</div>
               <div className="text-sm text-muted-foreground">Discussions</div>
             </CardContent>
           </Card>
           <Card className="bg-gradient-card text-center">
             <CardContent className="p-6">
               <Trophy className="h-8 w-8 text-primary mx-auto mb-2" />
-              <div className="text-2xl font-bold text-foreground">500+</div>
-              <div className="text-sm text-muted-foreground">Success Stories</div>
+              <div className="text-2xl font-bold text-foreground">Success</div>
+              <div className="text-sm text-muted-foreground">Stories Shared</div>
             </CardContent>
           </Card>
           <Card className="bg-gradient-card text-center">
@@ -180,7 +180,7 @@ const CommunityPage = () => {
             <CardContent className="p-0">
               <h2 className="text-3xl font-bold mb-4">Ready to Connect?</h2>
               <p className="text-xl mb-8 opacity-90">
-                Join thousands of AI automation enthusiasts building the future together
+                Join our growing community of AI automation enthusiasts building the future together
               </p>
               <Button size="xl" variant="cta" className="mb-4">
                 <Users className="h-5 w-5 mr-2" />
