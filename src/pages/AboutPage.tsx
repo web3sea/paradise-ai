@@ -146,7 +146,7 @@ const AboutPage = () => {
             <div className="grid lg:grid-cols-3 gap-8 items-center">
               <div className="text-center">
                 <img 
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" 
+                  src="/lovable-uploads/0f77d9e8-34b9-4e8e-9ba2-81e8d582636d.png" 
                   alt="Noah - Lead Instructor" 
                   className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
                 />
