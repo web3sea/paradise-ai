@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,7 +23,7 @@ const mockCourseData: Record<string, any> = {
     instructor: {
       name: "Noah",
       bio: "AI Automation Specialist with experience building scalable systems for businesses",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100"
+      image: "/lovable-uploads/0d11d5ad-ff75-4595-9f2f-7c60f69e8473.png"
     },
     whatYouLearn: [
       "Design intelligent automation workflows",
@@ -72,7 +71,7 @@ const mockCourseData: Record<string, any> = {
     instructor: {
       name: "Noah",
       bio: "AI Automation Specialist with experience building scalable systems for businesses",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100"
+      image: "/lovable-uploads/0d11d5ad-ff75-4595-9f2f-7c60f69e8473.png"
     },
     whatYouLearn: [
       "Design custom AI agents",
