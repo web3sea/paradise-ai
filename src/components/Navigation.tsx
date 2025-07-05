@@ -38,7 +38,7 @@ const Navigation = () => {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="ghost" asChild>
-              <Link to="/login">Login</Link>
+              <Link to="/community">Login</Link>
             </Button>
             <Button variant="cta" asChild>
               <Link to="/join">Join Now</Link>
@@ -88,7 +88,7 @@ const Navigation = () => {
               </Link>
               <div className="pt-4 space-y-2">
                 <Button variant="ghost" className="w-full" asChild>
-                  <Link to="/login">Login</Link>
+                  <Link to="/community">Login</Link>
                 </Button>
                 <Button variant="cta" className="w-full" asChild>
                   <Link to="/join">Join Now</Link>

@@ -7,85 +7,114 @@ import {
   PlayCircle, 
   Clock, 
   Users, 
-  Star, 
   CheckCircle,
   Award,
-  Download,
-  MessageSquare
+  Download
 } from "lucide-react";
 
-// Mock course data - replace with Supabase data later
-const mockCourseData = {
-  1: {
-    title: "AI Automation Fundamentals for Business Owners",
-    subtitle: "Transform Your Business with AI Automation",
-    price: 297,
-    originalPrice: 497,
+// Course data inspired by AI automation services
+const mockCourseData: Record<string, any> = {
+  "1": {
+    title: "AI Workflow Automation Fundamentals",
+    subtitle: "Build Intelligent Systems That Work for You",
     level: "Beginner",
     duration: "4 hours",
     students: 1250,
-    rating: 4.8,
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     instructor: {
       name: "Noah",
-      bio: "AI Automation Expert with 3+ years of agency experience in Bali",
+      bio: "AI Automation Specialist with experience building scalable systems for businesses",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100"
     },
     whatYouLearn: [
-      "Master the fundamentals of AI automation",
-      "Identify automation opportunities in your business",
-      "Use no-code tools like Zapier and Make.com",
-      "Build your first automated workflow",
-      "Scale automation across your organization"
+      "Design intelligent automation workflows",
+      "Connect multiple AI tools seamlessly",
+      "Optimize business processes with AI",
+      "Build scalable automation systems",
+      "Implement no-code AI solutions"
     ],
     modules: [
       {
         title: "Introduction to AI Automation",
-        lessons: ["What is AI Automation?", "Business Impact & ROI", "Common Use Cases"],
+        lessons: ["Understanding AI Workflows", "Identifying Automation Opportunities", "Planning Your First System"],
         duration: "45 min"
       },
       {
-        title: "No-Code Automation Tools",
-        lessons: ["Zapier Fundamentals", "Make.com Advanced", "Integration Strategies"],
+        title: "Building Your First Workflow",
+        lessons: ["Tool Selection", "Connection Setup", "Testing and Optimization"],
         duration: "90 min"
       },
       {
-        title: "Building Your First Workflow",
-        lessons: ["Planning Your Automation", "Implementation", "Testing & Optimization"],
+        title: "Advanced Automation Patterns",
+        lessons: ["Multi-step Workflows", "Conditional Logic", "Error Handling"],
         duration: "120 min"
       },
       {
-        title: "Scaling Your Automation",
-        lessons: ["Advanced Workflows", "Team Implementation", "Monitoring & Maintenance"],
+        title: "Scaling Your Systems",
+        lessons: ["Performance Optimization", "Monitoring Setup", "Maintenance Best Practices"],
         duration: "75 min"
       }
     ],
     bonuses: [
-      "AI Automation Toolkit (Templates & Checklists)",
-      "Private Community Access",
-      "Monthly Live Q&A Sessions",
+      "AI Automation Toolkit & Templates",
+      "Community Access",
+      "Live Implementation Sessions",
       "Certificate of Completion"
+    ]
+  },
+  "2": {
+    title: "Custom AI Agent Development",
+    subtitle: "Create Intelligent Assistants for Your Business",
+    level: "Intermediate",
+    duration: "6 hours",
+    students: 850,
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    instructor: {
+      name: "Noah",
+      bio: "AI Automation Specialist with experience building scalable systems for businesses",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100"
+    },
+    whatYouLearn: [
+      "Design custom AI agents",
+      "Implement conversational interfaces",
+      "Integrate with business systems",
+      "Deploy and manage AI assistants",
+      "Monitor agent performance"
     ],
-    testimonials: [
+    modules: [
       {
-        name: "Sarah Johnson",
-        role: "Small Business Owner",
-        content: "This course transformed how I run my business. I'm saving 10 hours per week!",
-        rating: 5
+        title: "AI Agent Fundamentals",
+        lessons: ["Agent Architecture", "Use Case Analysis", "Design Principles"],
+        duration: "60 min"
       },
       {
-        name: "Mike Chen",
-        role: "Marketing Director",
-        content: "Noah's practical approach made AI automation finally click for me.",
-        rating: 5
+        title: "Building Your Agent",
+        lessons: ["Core Logic Implementation", "Integration Setup", "Testing Protocols"],
+        duration: "150 min"
+      },
+      {
+        title: "Advanced Features",
+        lessons: ["Memory Systems", "Context Management", "Multi-modal Capabilities"],
+        duration: "120 min"
+      },
+      {
+        title: "Deployment & Management",
+        lessons: ["Production Setup", "Monitoring Systems", "Continuous Improvement"],
+        duration: "90 min"
       }
+    ],
+    bonuses: [
+      "Agent Template Library",
+      "Integration Code Examples",
+      "Deployment Checklists",
+      "Expert Office Hours"
     ]
   }
 };
 
 const CoursePage = () => {
   const { id } = useParams();
-  const course = mockCourseData[id as keyof typeof mockCourseData];
+  const course = mockCourseData[id || ""];
 
   if (!course) {
     return (
@@ -123,28 +152,18 @@ const CoursePage = () => {
               </div>
               <div className="flex items-center gap-1">
                 <Users className="h-4 w-4" />
-                {course.students.toLocaleString()} students
-              </div>
-              <div className="flex items-center gap-1">
-                <Star className="h-4 w-4 fill-current text-yellow-500" />
-                {course.rating}
+                {course.students.toLocaleString()} enrolled
               </div>
             </div>
             
-            {/* Pricing */}
+            {/* CTA */}
             <div className="bg-gradient-card p-6 rounded-lg border">
-              <div className="flex items-center gap-4 mb-4">
-                <span className="text-3xl font-bold text-foreground">${course.price}</span>
-                <span className="text-lg text-muted-foreground line-through">${course.originalPrice}</span>
-                <Badge variant="destructive">40% OFF</Badge>
-              </div>
-              
+              <h3 className="text-xl font-bold text-foreground mb-4">Ready to Get Started?</h3>
               <Button size="xl" variant="cta" className="w-full mb-4">
                 Enroll Now - Start Learning Today
               </Button>
-              
               <p className="text-sm text-muted-foreground text-center">
-                30-day money-back guarantee
+                Join thousands of students already learning
               </p>
             </div>
           </div>
@@ -170,7 +189,7 @@ const CoursePage = () => {
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-foreground mb-6">What You'll Learn</h2>
           <div className="grid md:grid-cols-2 gap-4">
-            {course.whatYouLearn.map((item, index) => (
+            {course.whatYouLearn.map((item: string, index: number) => (
               <div key={index} className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                 <span className="text-muted-foreground">{item}</span>
@@ -183,7 +202,7 @@ const CoursePage = () => {
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-foreground mb-6">Course Curriculum</h2>
           <div className="space-y-4">
-            {course.modules.map((module, index) => (
+            {course.modules.map((module: any, index: number) => (
               <Card key={index} className="bg-card">
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-3">
@@ -193,7 +212,7 @@ const CoursePage = () => {
                     <Badge variant="outline">{module.duration}</Badge>
                   </div>
                   <ul className="space-y-2">
-                    {module.lessons.map((lesson, lessonIndex) => (
+                    {module.lessons.map((lesson: string, lessonIndex: number) => (
                       <li key={lessonIndex} className="flex items-center gap-2 text-muted-foreground">
                         <PlayCircle className="h-4 w-4" />
                         {lesson}
@@ -208,9 +227,9 @@ const CoursePage = () => {
 
         {/* Bonuses */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-foreground mb-6">Course Bonuses</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Course Includes</h2>
           <div className="grid md:grid-cols-2 gap-4">
-            {course.bonuses.map((bonus, index) => (
+            {course.bonuses.map((bonus: string, index: number) => (
               <div key={index} className="flex items-start gap-3 p-4 bg-gradient-card rounded-lg">
                 <Award className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                 <span className="text-foreground font-medium">{bonus}</span>
@@ -241,41 +260,18 @@ const CoursePage = () => {
           </Card>
         </section>
 
-        {/* Testimonials */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-foreground mb-6">Student Success Stories</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {course.testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-card">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-current text-yellow-500" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-4">"{testimonial.content}"</p>
-                  <div>
-                    <div className="font-semibold text-foreground">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
         {/* Final CTA */}
         <section className="text-center">
           <Card className="bg-gradient-hero text-white p-8">
             <CardContent className="p-0">
-              <h2 className="text-2xl font-bold mb-4">Ready to Transform Your Business?</h2>
+              <h2 className="text-2xl font-bold mb-4">Ready to Master AI Automation?</h2>
               <p className="text-xl mb-6 opacity-90">
-                Join {course.students.toLocaleString()}+ students who have already started their AI automation journey
+                Join {course.students.toLocaleString()}+ students building the future with AI
               </p>
               <Button size="xl" variant="cta" className="mb-4">
-                Enroll Now for ${course.price}
+                Start Your Journey Today
               </Button>
-              <p className="text-sm opacity-75">30-day money-back guarantee</p>
+              <p className="text-sm opacity-75">Begin learning immediately after enrollment</p>
             </CardContent>
           </Card>
         </section>

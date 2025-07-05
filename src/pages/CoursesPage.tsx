@@ -10,62 +10,53 @@ import {
   Filter,
   Clock,
   Users,
-  Star,
   PlayCircle
 } from "lucide-react";
 
-// Mock course data - replace with Supabase data later
+// Updated course data focusing on AI automation products
 const mockCourses = [
   {
     id: 1,
-    title: "AI Automation Fundamentals for Business Owners",
-    description: "Master the basics of AI automation and transform your business processes",
-    price: 297,
+    title: "AI Workflow Automation Fundamentals",
+    description: "Learn to build intelligent systems that automate your business processes",
     level: "Beginner",
     duration: "4 hours",
     students: 1250,
-    rating: 4.8,
     instructor: "Noah",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400",
     category: "Fundamentals"
   },
   {
     id: 2,
-    title: "Building Your First AI-Powered Workflow",
-    description: "Hands-on project-based learning to create your first automated workflow",
-    price: 397,
+    title: "Custom AI Agent Development",
+    description: "Create intelligent assistants tailored to your specific business needs",
     level: "Intermediate",
     duration: "6 hours",
     students: 850,
-    rating: 4.9,
     instructor: "Noah",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400",
-    category: "Workflows"
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400",
+    category: "Development"
   },
   {
     id: 3,
-    title: "Prompt Engineering Mastery",
-    description: "Craft powerful prompts for maximum AI output and efficiency",
-    price: 197,
+    title: "AI-Powered Content Generation",
+    description: "Master the art of creating high-quality content using AI tools",
     level: "Beginner",
     duration: "3 hours",
     students: 2100,
-    rating: 4.7,
     instructor: "Noah",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400",
-    category: "AI Tools"
+    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400",
+    category: "Content"
   },
   {
     id: 4,
-    title: "Starting Your AI Automation Agency",
-    description: "Complete blueprint for launching and scaling your own AI automation agency",
-    price: 997,
+    title: "Business Process Optimization with AI",
+    description: "Transform your operations with intelligent automation strategies",
     level: "Advanced",
-    duration: "12 hours",
+    duration: "8 hours",
     students: 425,
-    rating: 4.9,
     instructor: "Noah",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400",
     category: "Business"
   }
 ];
@@ -85,7 +76,7 @@ const CoursesPage = () => {
   });
 
   const levels = ["All", "Beginner", "Intermediate", "Advanced"];
-  const categories = ["All", "Fundamentals", "Workflows", "AI Tools", "Business"];
+  const categories = ["All", "Fundamentals", "Development", "Content", "Business"];
 
   return (
     <div className="min-h-screen bg-background pt-20">
@@ -96,7 +87,7 @@ const CoursesPage = () => {
             AI Automation Courses
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Master AI automation with our comprehensive courses designed by industry experts
+            Master AI automation with practical, hands-on courses designed to transform how you work
           </p>
         </div>
 
@@ -153,11 +144,6 @@ const CoursesPage = () => {
                     {course.level}
                   </Badge>
                 </div>
-                <div className="absolute top-4 right-4">
-                  <div className="bg-black/50 text-white px-2 py-1 rounded text-sm font-medium">
-                    ${course.price}
-                  </div>
-                </div>
               </div>
               
               <CardHeader className="pb-2">
@@ -179,17 +165,13 @@ const CoursesPage = () => {
                     <Users className="h-4 w-4" />
                     {course.students.toLocaleString()}
                   </div>
-                  <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4 fill-current text-yellow-500" />
-                    {course.rating}
-                  </div>
                 </div>
                 
                 <div className="space-y-2">
                   <Button asChild className="w-full" variant="cta">
                     <Link to={`/course/${course.id}`} className="flex items-center gap-2">
                       <PlayCircle className="h-4 w-4" />
-                      View Course
+                      Learn More
                     </Link>
                   </Button>
                 </div>
